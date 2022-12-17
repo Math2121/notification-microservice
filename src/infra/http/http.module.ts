@@ -1,0 +1,14 @@
+import {Module} from "@nestjs/common"
+import { SendNotification } from "src/application/use-cases/send-notification";
+import { DatabaseModule } from "../database/databse.module";
+import { NotificationController } from "./controllers/notifications.controller";
+
+@Module({
+    imports: [DatabaseModule],
+    controllers: [
+NotificationController
+    ],
+    providers: [SendNotification]
+})
+
+export class HttpModule {}
